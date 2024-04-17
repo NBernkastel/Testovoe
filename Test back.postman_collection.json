@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "230ee2bf-c897-4559-b6e8-5c8c27e4bf8e",
+		"name": "Test back",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34341877"
+	},
+	"item": [
+		{
+			"name": "reg",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"root\",\r\n    \"password\":\"root\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "127.0.0.1:8000/reg"
+			},
+			"response": []
+		},
+		{
+			"name": "token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "root",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "root",
+							"type": "text"
+						}
+					]
+				},
+				"url": "127.0.0.1:8000/token"
+			},
+			"response": []
+		},
+		{
+			"name": "add form",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJleHAiOjE3MTM0NTk0NjB9.bfdtM7cSLRFjj07TEkwp4IiRfec1mXQFjw5Mnl8KhuI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"form\": [\r\n    {\r\n      \"question\": \"string\",\r\n      \"answer\": \"string\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "127.0.0.1:8000/form/add"
+			},
+			"response": []
+		},
+		{
+			"name": "get form",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJleHAiOjE3MTM0NTk0NjB9.bfdtM7cSLRFjj07TEkwp4IiRfec1mXQFjw5Mnl8KhuI"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "127.0.0.1:8000/form/get"
+			},
+			"response": []
+		}
+	]
+}
